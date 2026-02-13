@@ -1,14 +1,17 @@
 
 import React from 'react';
 import { SUSTAINABILITY_STATS, ASSETS } from '../constants';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Sustainability: React.FC = () => {
+  const reveal = useScrollReveal();
+
   return (
     <section className="py-16 sm:py-24 lg:py-32 bg-brand-green text-white overflow-hidden relative">
       <div className="absolute inset-0 opacity-10">
-        <img src={ASSETS.CAFETALES} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <img src={ASSETS.CAFETALES} alt="" role="presentation" className="w-full h-full object-cover" loading="lazy" />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <div ref={reveal.ref} className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 ${reveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center">
           <div>
             <h4 className="text-white/60 text-xs uppercase tracking-[0.4em] font-bold mb-3 sm:mb-4">Sostenibilidad</h4>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { ASSETS } from '../constants';
 import { Monitor, Wifi, Users, Coffee, Utensils, Home } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const FACILITIES = [
   { icon: <Users className="w-5 h-5" />, label: "2 salones hasta 40 personas" },
@@ -13,9 +14,11 @@ const FACILITIES = [
 ];
 
 const Spaces: React.FC = () => {
+  const reveal = useScrollReveal();
+
   return (
     <section id="spaces" className="py-16 sm:py-24 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div ref={reveal.ref} className={`max-w-7xl mx-auto px-4 sm:px-6 ${reveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="relative">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">

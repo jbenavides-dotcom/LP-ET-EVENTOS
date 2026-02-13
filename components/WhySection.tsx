@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Users, Home, Award, Leaf, Settings } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const WHY_ITEMS = [
   { icon: <MapPin className="w-4 h-4" />, text: "A solo 90 minutos de Bogotá, en plena naturaleza" },
@@ -12,9 +13,11 @@ const WHY_ITEMS = [
 ];
 
 const WhySection: React.FC = () => {
+  const reveal = useScrollReveal();
+
   return (
     <section className="py-16 sm:py-24 lg:py-32 bg-brand-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div ref={reveal.ref} className={`max-w-7xl mx-auto px-4 sm:px-6 ${reveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h4 className="text-brand-pink text-xs uppercase tracking-[0.4em] font-bold mb-3 sm:mb-4">¿Por qué elegirnos?</h4>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-dark mb-4 sm:mb-6">No es solo un lugar para reunirse</h2>

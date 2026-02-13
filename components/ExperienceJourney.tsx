@@ -1,18 +1,22 @@
 
 import React from 'react';
 import { JOURNEY_STEPS } from '../constants';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const ExperienceJourney: React.FC = () => {
+  const headerReveal = useScrollReveal();
+  const stepsReveal = useScrollReveal();
+
   return (
     <section className="py-16 sm:py-24 lg:py-32 bg-brand-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+        <div ref={headerReveal.ref} className={`text-center max-w-2xl mx-auto mb-12 sm:mb-16 lg:mb-20 ${headerReveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
           <h4 className="text-brand-pink text-xs uppercase tracking-[0.4em] font-bold mb-3 sm:mb-4">La Experiencia</h4>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-brand-dark mb-4 sm:mb-6">Un día que tu equipo no va a olvidar</h2>
           <p className="text-neutral-600 font-light text-sm sm:text-base">Cada momento está diseñado para generar conexión, creatividad e impacto.</p>
         </div>
 
-        <div className="space-y-8 sm:space-y-12 lg:space-y-16">
+        <div ref={stepsReveal.ref} className={`space-y-8 sm:space-y-12 lg:space-y-16 ${stepsReveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
           {JOURNEY_STEPS.map((step, idx) => (
             <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center ${idx % 2 === 1 ? 'lg:direction-rtl' : ''}`}>
               <div className={`relative rounded-2xl sm:rounded-[2rem] overflow-hidden aspect-[4/3] ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>

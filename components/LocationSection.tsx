@@ -2,12 +2,16 @@
 import React from 'react';
 import { DIRECTIONS, ASSETS } from '../constants';
 import { Navigation } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const LocationSection: React.FC = () => {
+  const imagesReveal = useScrollReveal();
+  const directionsReveal = useScrollReveal();
+
   return (
     <section id="location" className="py-16 sm:py-24 lg:py-32 bg-brand-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
+        <div ref={imagesReveal.ref} className={`grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20 ${imagesReveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
           <div className="relative rounded-2xl sm:rounded-[2rem] lg:rounded-[3rem] overflow-hidden group aspect-[4/5] sm:aspect-[3/4] lg:h-[500px]">
             <img
               src={ASSETS.LAGUNA}
@@ -36,7 +40,7 @@ const LocationSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-brand-dark rounded-2xl sm:rounded-[2.5rem] lg:rounded-[4rem] p-6 sm:p-10 lg:p-16 xl:p-24 text-white overflow-hidden relative">
+        <div ref={directionsReveal.ref} className={`bg-brand-dark rounded-2xl sm:rounded-[2.5rem] lg:rounded-[4rem] p-6 sm:p-10 lg:p-16 xl:p-24 text-white overflow-hidden relative ${directionsReveal.isVisible ? 'scroll-visible' : 'scroll-hidden'}`}>
           <div className="absolute top-0 right-0 w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 bg-brand-pink/10 blur-[100px] rounded-full"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 relative z-10">
             <div>
