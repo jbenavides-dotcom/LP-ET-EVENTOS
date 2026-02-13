@@ -18,7 +18,7 @@ import {
 // ASSETS DE CLOUDINARY
 export const ASSETS = {
   HERO_BG: "https://res.cloudinary.com/dsylu9a7k/image/upload/lpet/hero-aerial.png",
-  EVENTOS: "https://res.cloudinary.com/dsylu9a7k/image/upload/lpet/eventos.png",
+  EVENTOS: "https://res.cloudinary.com/dsylu9a7k/image/upload/f_auto,q_auto,w_1920/lpet/eventos.png",
   CAFETALES: "https://res.cloudinary.com/dsylu9a7k/image/upload/lpet/cafetales.png",
   DEGUSTACION_CAFE: "https://res.cloudinary.com/dsylu9a7k/image/upload/lpet/degustacion-cafe.png",
   COMIDA: "https://res.cloudinary.com/dsylu9a7k/image/upload/lpet/comida-farm-to-table.png",
