@@ -24,12 +24,12 @@ html {
 }
 
 ::selection {
-  background-color: #9B3A5A;
+  background-color: #E8838C;
   color: white;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #9B3A5A;
+  outline: 2px solid #E8838C;
   outline-offset: 2px;
 }
