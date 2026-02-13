@@ -21,6 +21,7 @@ const Activities: React.FC = () => {
               <img
                 src={activity.image}
                 alt={activity.label}
+                style={(activity as any).rotate ? { transform: 'rotate(90deg) scale(1.4)' } : undefined}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
               />

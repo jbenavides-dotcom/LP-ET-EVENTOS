@@ -134,7 +134,7 @@ export const ACTIVITIES = [
   { label: "Degustación de Especialidad", image: ASSETS.CABANA, icon: <Coffee className="w-5 h-5" /> },
   { label: "Almuerzo Farm-to-Table", image: ASSETS.HUERTA, icon: <Utensils className="w-5 h-5" /> },
   { label: "Caminatas Ecológicas", image: ASSETS.CASCADA, icon: <Footprints className="w-5 h-5" /> },
-  { label: "Yoga y Bienestar", image: ASSETS.YOGA, icon: <Leaf className="w-5 h-5" /> },
+  { label: "Yoga y Bienestar", image: ASSETS.YOGA, icon: <Leaf className="w-5 h-5" />, rotate: true },
   { label: "Pizza y Fogata", image: ASSETS.LAGUNA, icon: <Flame className="w-5 h-5" /> },
 ];
 
