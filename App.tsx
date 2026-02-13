@@ -7,7 +7,7 @@ import EventTypes from './components/EventTypes';
 import ExperienceJourney from './components/ExperienceJourney';
 import Spaces from './components/Spaces';
 import Activities from './components/Activities';
-import Clients from './components/Clients';
+
 import Sustainability from './components/Sustainability';
 import LocationSection from './components/LocationSection';
 import { BOOKING_URL, ASSETS, SOCIAL_LINKS, CONTACT_INFO } from './constants';
@@ -25,7 +25,6 @@ const App: React.FC = () => {
         <Spaces />
         <ExperienceJourney />
         <Activities />
-        <Clients />
         <Sustainability />
         <LocationSection />
 

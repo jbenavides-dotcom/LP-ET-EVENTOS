@@ -15,12 +15,23 @@ const Activities: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {ACTIVITIES.map((activity, idx) => (
             <div key={idx} className="group relative rounded-2xl sm:rounded-[2rem] overflow-hidden aspect-[4/3] cursor-default">
-              <img
-                src={activity.image}
-                alt={activity.label}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                loading="lazy"
-              />
+              {(activity as any).rotate ? (
+                <div style={{ transform: 'rotate(90deg) scale(1.4)' }} className="w-full h-full">
+                  <img
+                    src={activity.image}
+                    alt={activity.label}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <img
+                  src={activity.image}
+                  alt={activity.label}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-brand-pink flex items-center justify-center text-white">

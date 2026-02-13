@@ -135,7 +135,7 @@ export const ACTIVITIES = [
   { label: "Degustación de Especialidad", image: ASSETS.DEGUSTACION_CAFE, icon: <Coffee className="w-5 h-5" /> },
   { label: "Almuerzo Farm-to-Table", image: ASSETS.COMIDA, icon: <Utensils className="w-5 h-5" /> },
   { label: "Caminatas Ecológicas", image: ASSETS.CAMINATA, icon: <Footprints className="w-5 h-5" /> },
-  { label: "Yoga y Bienestar", image: ASSETS.YOGA, icon: <Leaf className="w-5 h-5" /> },
+  { label: "Yoga y Bienestar", image: ASSETS.YOGA, icon: <Leaf className="w-5 h-5" />, rotate: true },
   { label: "Pizza y Fogata", image: ASSETS.PIZZA_FOGATA, icon: <Flame className="w-5 h-5" /> },
 ];
 
